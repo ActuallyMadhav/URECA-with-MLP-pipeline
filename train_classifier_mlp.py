@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # ─────────────────────────────────────────────
-# CONFIG  (edit these freely)
+# CONFIG 
 # ─────────────────────────────────────────────
 HIDDEN_SIZES = [256, 128, 64]   # neurons per hidden layer
 DROPOUT      = 0.3              # regularisation — reduce if underfitting
