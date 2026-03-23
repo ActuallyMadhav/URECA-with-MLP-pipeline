@@ -23,7 +23,7 @@ LETTERS      = list('ABCDEFGHIKLMNOPQRSTUVWXY')  # 24 letters — no J or Z
 
 os.makedirs(DATA_DIR, exist_ok=True)
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)   # 0 - for integrated webcam. on linux run "ls /dev/video* and select appropriate number"
 if not cap.isOpened():
     print("Error: could not open camera.")
     exit(1)
