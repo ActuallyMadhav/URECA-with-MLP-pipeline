@@ -19,7 +19,7 @@ run_collect() {
     echo "════════════════════════════════════════════"
     echo "  Stage 1 — Collecting webcam data"
     echo "════════════════════════════════════════════"
-    python collect_data.py
+    python3 collect_data.py
 }
 
 run_dataset() {
@@ -27,7 +27,7 @@ run_dataset() {
     echo "════════════════════════════════════════════"
     echo "  Stage 2 — Extracting landmarks"
     echo "════════════════════════════════════════════"
-    python create_dataset.py
+    python3 create_dataset.py
 }
 
 run_train() {
@@ -35,7 +35,7 @@ run_train() {
     echo "════════════════════════════════════════════"
     echo "  Stage 3 — Training MLP"
     echo "════════════════════════════════════════════"
-    python train_classifier_mlp.py
+    python3 train_classifier_mlp.py
 }
 
 run_infer() {
@@ -43,7 +43,7 @@ run_infer() {
     echo "════════════════════════════════════════════"
     echo "  Stage 4 — Running real-time inference"
     echo "════════════════════════════════════════════"
-    python inference_classifier_mlp.py
+    python3 inference_classifier_mlp.py
 }
 
 # ── Dispatch ──────────────────────────────────────────────────────────────
