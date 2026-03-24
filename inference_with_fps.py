@@ -201,7 +201,7 @@ while True:
     cv2.putText(frame, fps_text, (tx + 1, ty + 1),
                 font, font_scale, (0, 0, 0), thickness + 1, cv2.LINE_AA)
     cv2.putText(frame, fps_text, (tx, ty),
-                font, font_scale, (255, 255, 255), thickness, cv2.LINE_AA)
+                font, font_scale, (0, 220, 0), thickness, cv2.LINE_AA)
     # ──────────────────────────────────────────────────────────────────────
 
     cv2.imshow('ASL Classifier  [Q = quit]', frame)
