@@ -60,7 +60,8 @@ stats = {
     'inference': [],
     'drawing': [],
     'total_loop': [],
-    'fps_timeline': []
+    'fps_timeline': [],
+    'time_stamps': []
 }
 
 def extract_features(hand_landmarks):
@@ -121,6 +122,7 @@ while True:
     stats['total_loop'].append(loop_time)
     current_fps = 1.0 / loop_time if loop_time > 0 else 0
     stats['fps_timeline'].append(current_fps)
+    stats['time_stamps'].append(elapsed)
 
     cv2.imshow('Performance Benchmark', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'): break
@@ -144,9 +146,10 @@ std_fps = np.std(stats['fps_timeline'])
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8))
 
 # Plot 1: FPS Stability
-ax1.plot(stats['fps_timeline'], color='tab:blue', alpha=0.6, label='Instantaneous FPS')
+ax1.plot(stats['time_stamps'], stats['fps_timeline'], color='tab:blue', alpha=0.6, label='Instantaneous FPS')
 ax1.axhline(avg_fps, color='red', linestyle='--', label=f'Avg: {avg_fps:.1f}')
 ax1.set_title(f"FPS Stability (Jitter σ: {std_fps:.2f})")
+ax1.set_xlabel("Elapsed Time (seconds)")
 ax1.set_ylabel("Frames Per Second")
 ax1.legend()
 
