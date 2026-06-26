@@ -49,7 +49,7 @@ class GestureMLP(nn.Module):
     def forward(self, x):
         return self.net(x)
 
-checkpoint = pickle.load(open('./model_mlp.p', 'rb'))
+checkpoint = pickle.load(open('app/model_mlp.p', 'rb'))
 cfg        = checkpoint['model_config']
 le         = checkpoint['label_encoder']
 
