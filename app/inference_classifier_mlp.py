@@ -46,7 +46,7 @@ class GestureMLP(nn.Module):
 # ══════════════════════════════════════════════
 # LOAD MODEL
 # ══════════════════════════════════════════════
-checkpoint = pickle.load(open('./model_mlp.p', 'rb'))
+checkpoint = pickle.load(open('app/model_mlp.p', 'rb'))
 cfg        = checkpoint['model_config']
 
 model = GestureMLP(
